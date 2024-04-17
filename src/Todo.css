@@ -1,0 +1,98 @@
+:root {
+    /* pastel color scheme */
+    --pastel-blue: #accef0;
+    --pastel-green: #b8e9b1;
+    --pastel-yellow: #fdfd96;
+    --pastel-pink: #fcc3c3;
+    --pastel-purple: #c3aed6;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--pastel-blue);
+    color: #333;
+    margin: 0;
+    padding: 0 1rem; /* Added padding */
+    box-sizing: border-box;
+}
+
+header, footer {
+    text-align: center;
+    padding: 1rem;
+}
+
+header {
+    background-color: var(--pastel-pink);
+    color: #333;
+}
+
+footer {
+    background-color: var(--pastel-yellow);
+}
+
+.main {
+    max-width: 800px; /*better readability */
+    margin: auto;
+}
+
+.todo-input-section, .todo-list-section {
+    margin: 1rem 0;
+}
+
+#todoInput {
+    width: calc(100% - 110px); /*prevent overflow */
+    padding: 0.5rem;
+}
+
+#todoList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo-item {
+    background-color: var(--pastel-green);
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: var(--pastel-purple);
+}
+
+button {
+    background-color: var(--pastel-yellow);
+    color: #333;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (min-width: 376px) {
+    body, header, footer {
+        padding: 1rem 2rem; /* added padding
+    }
+
+    .main {
+        padding: 0 1rem; /* Padding
+    }
+}
+
+/* Unique font families for headings */
+h1 {
+    font-family: 'Georgia', serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+    }
+}
