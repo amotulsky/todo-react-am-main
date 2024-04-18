@@ -5,7 +5,6 @@ import './Todo.css';
 import React, { useState, useCallback } from 'react';
 
 // Todo.jsx
-import React from 'react';
 import './Todo.css';
 
 function Todo({ id, text, completed, deleteTodo, toggleComplete }) {
