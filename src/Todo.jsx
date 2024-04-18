@@ -5,17 +5,21 @@ import './Todo.css';
 import React, { useState, useCallback } from 'react';
 
 // Todo.jsx
-function Todo({ id, text, completed, deleteTodo }) {
-  // Renders the todo text and a delete button.
-  // Clicking the delete button will call the deleteTodo function passed as a prop.
+function Todo({ id, text, completed, deleteTodo, toggleComplete }) {
+  // Function to handle key presses for completion toggling
+  const handleKeyPressOnTodo = (event) => {
+    if (event.key === 'Enter') {
+      toggleComplete(id); // Toggle completion on Enter key
+    }
+  };
+
   return (
     <li className={`todo-item ${completed ? 'completed' : ''}`}>
-      {/* Make the text focusable with tabIndex */}
-      <span tabIndex="0" onClick={() => deleteTodo(id)} onKeyPress={(e) => {
-        if (e.key === 'Enter') deleteTodo(id); // Allows deletion with Enter key when focused
-      }}>
+      {/* Make text focusable and toggle completion on Enter key */}
+      <span tabIndex="0" onClick={() => toggleComplete(id)} onKeyPress={handleKeyPressOnTodo}>
         {text}
       </span>
+      {/* Delete button naturally included in tab order */}
       <button type="button" onClick={() => deleteTodo(id)}>Delete</button>
     </li>
   );
