@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import NewTodo from './NewTodo';
@@ -8,7 +7,6 @@ const App = () => {
     const [todos, setTodos] = useState([]);
     const [sortField, setSortField] = useState('text');
     const [sortOrder, setSortOrder] = useState('asc');
-
 
     useEffect(() => {
         fetchTodos();
@@ -81,27 +79,32 @@ const App = () => {
         .catch(error => console.error('Error toggling todo completion:', error));
     };
 
+    const handleSort = (field, order) => {
+        setSortField(field);
+        setSortOrder(order);
+    };
+
     const getSortedTodos = () => {
-      const sortedTodos = [...todos].sort((a, b) => {
-          if (sortField === 'text') {
-              return sortOrder === 'asc'
-                  ? a.text.localeCompare(b.text)
-                  : b.text.localeCompare(a.text);
-          }
-          if (sortField === 'created') {
-              return sortOrder === 'asc'
-                  ? new Date(a.created) - new Date(b.created)
-                  : new Date(b.created) - new Date(a.created);
-          }
-          if (sortField === 'completed') {
-              return sortOrder === 'asc'
-                  ? Number(a.completed) - Number(b.completed)
-                  : Number(b.completed) - Number(a.completed);
-          }
-          return 0;
-      });
-      return sortedTodos;
-  };
+        const sortedTodos = [...todos].sort((a, b) => {
+            if (sortField === 'text') {
+                return sortOrder === 'asc'
+                    ? a.text.localeCompare(b.text)
+                    : b.text.localeCompare(a.text);
+            }
+            if (sortField === 'created') {
+                return sortOrder === 'asc'
+                    ? new Date(a.created) - new Date(b.created)
+                    : new Date(b.created) - new Date(a.created);
+            }
+            if (sortField === 'completed') {
+                return sortOrder === 'asc'
+                    ? Number(a.completed) - Number(b.completed)
+                    : Number(b.completed) - Number(a.completed);
+            }
+            return 0;
+        });
+        return sortedTodos;
+    };
 
     return (
         <div className="app">
@@ -109,10 +112,18 @@ const App = () => {
                 <h1>ToDo App</h1>
             </header>
             <main>
+                <section className="sort-controls">
+                    <button onClick={() => handleSort('text', 'asc')}>Alphabetically Asc</button>
+                    <button onClick={() => handleSort('text', 'desc')}>Alphabetically Desc</button>
+                    <button onClick={() => handleSort('created', 'asc')}>Date Created Asc</button>
+                    <button onClick={() => handleSort('created', 'desc')}>Date Created Desc</button>
+                    <button onClick={() => handleSort('completed', 'asc')}>Status Completed Asc</button>
+                    <button onClick={() => handleSort('completed', 'desc')}>Status Completed Desc</button>
+                </section>
                 <NewTodo addTodo={addTodo} />
                 <section className="todo-list-section">
                     <ul id="todoList">
-                        {todos.map((todo) => (
+                        {getSortedTodos().map((todo) => (
                             <Todo
                                 key={todo.id}
                                 id={todo.id}

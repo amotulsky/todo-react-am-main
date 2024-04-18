@@ -78,6 +78,14 @@ button:hover {
     opacity: 0.8;
 }
 
+.sort-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem; /* Add margin to separate from header */
+    padding: 0 0.5rem;
+}
+
 /* Responsive Design */
 @media (min-width: 376px) {
     body, header, footer {
