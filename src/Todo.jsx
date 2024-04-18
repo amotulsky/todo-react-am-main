@@ -8,15 +8,15 @@ import React, { useState, useCallback } from 'react';
 import './Todo.css';
 
 function Todo({ id, text, completed, deleteTodo, toggleComplete }) {
+  // Assuming toggleComplete is meant to be triggered on clicking the todo text
   return (
-    <div className={`todo-item ${completed ? 'completed' : ''}`} onClick={() => toggleComplete(id)}>
-      {/* Remove tabIndex if you do not need the text itself to be focusable */}
-      <span>{text}</span>
-      {/* Button will be focused after the text since it's interactive */}
+    <li className={`todo-item ${completed ? 'completed' : ''}`}>
+      <span onClick={() => toggleComplete(id)}>{text}</span>
       <button type="button" onClick={() => deleteTodo(id)}>Delete</button>
-    </div>
+    </li>
   );
 }
+
 
 
 
