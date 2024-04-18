@@ -14,13 +14,13 @@ function Todo({ id, text, completed, deleteTodo, toggleComplete }) {
   };
 
   return (
-    <li className={`todo-item ${completed ? 'completed' : ''}`}>
+    <li tabIndex={0} className={`todo-item ${completed ? 'completed' : ''}`}>
       {/* Make text focusable and toggle completion on Enter key */}
-      <span tabIndex="0" onClick={() => toggleComplete(id)} onKeyPress={handleKeyPressOnTodo}>
+      <span  onClick={() => toggleComplete(id)} onKeyPress={handleKeyPressOnTodo}>
         {text}
       </span>
       {/* Delete button naturally included in tab order */}
-      <button type="button" onClick={() => deleteTodo(id)}>Delete</button>
+      <button tabIndex={0} type="button" onClick={() => deleteTodo(id)}>Delete</button>
     </li>
   );
 }
