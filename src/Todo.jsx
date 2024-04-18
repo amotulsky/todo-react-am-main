@@ -5,22 +5,16 @@ import './Todo.css';
 import React, { useState, useCallback } from 'react';
 
 // Todo.jsx
-function Todo({ id, text, completed, deleteTodo, toggleComplete }) {
-  // Just render the text and delete button without setting tabIndex.
-  // Clicking on the text or pressing Enter when focused will toggle completion.
+function Todo({ id, text, completed, deleteTodo }) {
+  // Renders the todo text and a delete button.
+  // Clicking the delete button will call the deleteTodo function passed as a prop.
   return (
     <li className={`todo-item ${completed ? 'completed' : ''}`}>
-      <span onClick={() => toggleComplete(id)} onKeyPress={(e) => e.key === 'Enter' && toggleComplete(id)}>
-        {text}
-      </span>
-      {/* The delete button is focusable by default, no need for tabIndex */}
+      <span>{text}</span>
       <button type="button" onClick={() => deleteTodo(id)}>Delete</button>
     </li>
   );
 }
 
-
-
-
-
 export default Todo;
+
