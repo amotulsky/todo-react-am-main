@@ -2,10 +2,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import wustlLogo from './assets/wustl.svg'
 import './Todo.css';
-import React, { useState, useCallback } from 'react';
+
 // NewTodo.jsx
 import React, { useState, useCallback } from 'react';
-import './NewTodo.css';
+
 
 function NewTodo({ addTodo }) {
     const [inputValue, setInputValue] = useState('');
