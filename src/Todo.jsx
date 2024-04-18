@@ -8,16 +8,16 @@ import React, { useState, useCallback } from 'react';
 import './Todo.css';
 
 function Todo({ id, text, completed, deleteTodo, toggleComplete }) {
-  // tabIndex={0} makes an element focusable and part of the natural tab order
   return (
-    <div className={`todo-item ${completed ? 'completed' : ''}`}>
-      <span tabIndex={0} onClick={() => toggleComplete(id)} onKeyPress={(e) => e.key === 'Enter' && toggleComplete(id)}>
-        {text}
-      </span>
-      <button tabIndex={0} type="button" onClick={() => deleteTodo(id)}>Delete</button>
+    <div className={`todo-item ${completed ? 'completed' : ''}`} onClick={() => toggleComplete(id)}>
+      {/* Remove tabIndex if you do not need the text itself to be focusable */}
+      <span>{text}</span>
+      {/* Button will be focused after the text since it's interactive */}
+      <button type="button" onClick={() => deleteTodo(id)}>Delete</button>
     </div>
   );
 }
+
 
 
 export default Todo;
