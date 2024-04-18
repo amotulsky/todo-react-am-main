@@ -2,7 +2,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import wustlLogo from './assets/wustl.svg'
 import './Todo.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function NewTodo({ addTodo }) {
   const [inputValue, setInputValue] = useState('');
