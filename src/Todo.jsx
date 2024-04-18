@@ -9,13 +9,10 @@ import './Todo.css';
 
 function Todo({ id, text, completed, deleteTodo, toggleComplete }) {
   return (
-    <li
-      className={`todo-item ${completed ? 'completed' : ''}`}
-      onClick={() => toggleComplete(id)}
-    >
+    <div className={`todo-item ${completed ? 'completed' : ''}`} onClick={() => toggleComplete(id)}>
       {text}
       <button type="button" onClick={() => deleteTodo(id)}>Delete</button>
-    </li>
+    </div>
   );
 }
 
