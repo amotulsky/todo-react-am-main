@@ -8,14 +8,15 @@ import React, { useState, useCallback } from 'react';
 import './Todo.css';
 
 function Todo({ id, text, completed, deleteTodo, toggleComplete }) {
-  // Assuming toggleComplete is meant to be triggered on clicking the todo text
+  // Remove tabIndex from the span if it's not necessary for it to be focusable
   return (
-    <li className={`todo-item ${completed ? 'completed' : ''}`}>
-      <span onClick={() => toggleComplete(id)}>{text}</span>
+    <li className={`todo-item ${completed ? 'completed' : ''}`} onClick={() => toggleComplete(id)}>
+      <span>{text}</span> {/* Removed tabIndex, span is not focusable anymore */}
       <button type="button" onClick={() => deleteTodo(id)}>Delete</button>
     </li>
   );
 }
+
 
 
 
