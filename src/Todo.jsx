@@ -5,13 +5,15 @@ import './Todo.css';
 import React, { useState, useCallback } from 'react';
 
 // Todo.jsx
-import './Todo.css';
-
 function Todo({ id, text, completed, deleteTodo, toggleComplete }) {
-  // Remove tabIndex from the span if it's not necessary for it to be focusable
+  // Just render the text and delete button without setting tabIndex.
+  // Clicking on the text or pressing Enter when focused will toggle completion.
   return (
-    <li className={`todo-item ${completed ? 'completed' : ''}`} onClick={() => toggleComplete(id)}>
-      <span>{text}</span> {/* Removed tabIndex, span is not focusable anymore */}
+    <li className={`todo-item ${completed ? 'completed' : ''}`}>
+      <span onClick={() => toggleComplete(id)} onKeyPress={(e) => e.key === 'Enter' && toggleComplete(id)}>
+        {text}
+      </span>
+      {/* The delete button is focusable by default, no need for tabIndex */}
       <button type="button" onClick={() => deleteTodo(id)}>Delete</button>
     </li>
   );
