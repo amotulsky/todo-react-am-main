@@ -44,6 +44,35 @@ footer {
     padding: 0.5rem;
 }
 
+.todo-input-section .input-group {
+    display: flex;        /* Enables flexbox */
+    align-items: center;  /* Vertically center aligns children */
+    gap: 10px;            /* Adds space between children */
+  }
+  
+  .todo-input-section input {
+    flex-grow: 1;         /* Allows input to take up available space */
+    height: 40px;         /* Standard height for input */
+    padding: 0 10px;      /* Padding inside input */
+    border: 1px solid #ccc; /* Adds border for better visual structure */
+    border-radius: 4px;   /* Rounds the corners */
+  }
+  
+  .todo-input-section button {
+    height: 40px;         /* Ensures button height matches input */
+    border-radius: 4px;   /* Matches input border-radius */
+    padding: 0 20px;      /* Horizontal padding */
+    background-color: var(--pastel-yellow); /* Uses variable for color */
+    color: #333;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .todo-input-section button:hover {
+    opacity: 0.8;         /* Adds interaction feedback on hover */
+  }
+  
+
 #todoList {
     list-style-type: none;
     padding: 0;

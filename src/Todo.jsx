@@ -1,17 +1,17 @@
 import React from 'react';
 import './Todo.css';
 
-function Todo({ id, text, completed, handleDelete, handleComplete }) {
+function Todo({ id, text, completed, deleteTodo, toggleComplete }) { // Correct prop names
   return (
     <li className={`todo-item ${completed ? 'completed' : ''}`} id={id}>
       <span
         tabIndex={0} // Make text focusable
-        onClick={() => handleComplete({ target: { parentElement: { id } } })}
-        onKeyPress={(event) => event.key === 'Enter' && handleComplete({ target: { parentElement: { id } } })}
+        onClick={() => toggleComplete(id)} // Simplified call for toggleComplete
+        onKeyPress={(event) => event.key === 'Enter' && toggleComplete(id)}
       >
         {text}
       </span>
-      <button type="button" onClick={() => handleDelete({ target: { parentElement: { id } } })}>Delete</button>
+      <button type="button" onClick={() => deleteTodo(id)}>Delete</button>
     </li>
   );
 }
