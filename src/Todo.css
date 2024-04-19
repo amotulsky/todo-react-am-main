@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
 :root {
     /* pastel color scheme */
     --pastel-blue: #accef0;
@@ -12,7 +14,7 @@ body {
     background-color: var(--pastel-blue);
     color: #333;
     margin: 0;
-    padding: 0 1rem; /* Added padding */
+    padding: 0 1rem; 
     box-sizing: border-box;
 }
 
@@ -31,7 +33,7 @@ footer {
 }
 
 .main {
-    max-width: 800px; /*better readability */
+    max-width: 800px; 
     margin: auto;
 }
 
@@ -40,38 +42,37 @@ footer {
 }
 
 #todoInput {
-    width: calc(100% - 110px); /*prevent overflow */
+    width: calc(100% - 110px); 
     padding: 0.5rem;
 }
 
 .todo-input-section .input-group {
-    display: flex;        /* Enables flexbox */
-    align-items: center;  /* Vertically center aligns children */
-    gap: 10px;            /* Adds space between children */
-  }
+    display: flex;        
+    align-items: center;  
+    gap: 10px;          
+}
   
-  .todo-input-section input {
-    flex-grow: 1;         /* Allows input to take up available space */
-    height: 40px;         /* Standard height for input */
-    padding: 0 10px;      /* Padding inside input */
-    border: 1px solid #ccc; /* Adds border for better visual structure */
-    border-radius: 4px;   /* Rounds the corners */
-  }
+.todo-input-section input {
+    flex-grow: 1;        
+    height: 40px;         
+    padding: 0 10px;    
+    border: 1px solid #ccc; 
+    border-radius: 4px;  
+}
   
-  .todo-input-section button {
-    height: 40px;         /* Ensures button height matches input */
-    border-radius: 4px;   /* Matches input border-radius */
-    padding: 0 20px;      /* Horizontal padding */
-    background-color: var(--pastel-yellow); /* Uses variable for color */
+.todo-input-section button {
+    height: 40px;        
+    border-radius: 4px;  
+    padding: 0 20px;      
+    background-color: var(--pastel-yellow); 
     color: #333;
     border: none;
     cursor: pointer;
-  }
-  
-  .todo-input-section button:hover {
-    opacity: 0.8;         /* Adds interaction feedback on hover */
-  }
-  
+}
+
+.todo-input-section button:hover {
+    opacity: 0.8;         
+}
 
 #todoList {
     list-style-type: none;
@@ -111,25 +112,21 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 1rem; /* Add margin to separate from header */
+    margin-top: 1rem;
     padding: 0 0.5rem;
 }
 
 /* Responsive Design */
 @media (min-width: 376px) {
     body, header, footer {
-        padding: 1rem 2rem; /* added padding
+        padding: 1rem 2rem; /* padding */
     }
 
     .main {
-        padding: 0 1rem; /* Padding
+        padding: 0 1rem; /* padding */
     }
 }
 
-/* Unique font families for headings */
 h1 {
     font-family: 'Georgia', serif;
-}
-@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
-    }
 }

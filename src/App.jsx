@@ -39,7 +39,7 @@ const App = () => {
             return response.json();
         })
         .then(() => {
-            fetchTodos(); // Refetch the todos after adding
+            fetchTodos(); 
         })
         .catch(error => console.error('Error adding todo:', error));
     };
@@ -55,7 +55,7 @@ const App = () => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            fetchTodos(); // Refetch the todos after deleting
+            fetchTodos(); 
         })
         .catch(error => console.error('Error deleting todo:', error));
     };
@@ -74,7 +74,7 @@ const App = () => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            fetchTodos(); // Refetch the todos after toggling completion
+            fetchTodos(); 
         })
         .catch(error => console.error('Error toggling todo completion:', error));
     };
@@ -114,11 +114,11 @@ const App = () => {
             <main>
                 <section className="sort-controls">
                     <button onClick={() => handleSort('text', 'asc')}>Alphabetically Asc</button>
-                    <button onClick={() => handleSort('text', 'desc')}>Alphabetically Desc</button>
+                    <button onClick={() => handleSort('text', 'desc')}>Alphabetically Dsc</button>
                     <button onClick={() => handleSort('created', 'asc')}>Date Created Asc</button>
-                    <button onClick={() => handleSort('created', 'desc')}>Date Created Desc</button>
+                    <button onClick={() => handleSort('created', 'desc')}>Date Created Dsc</button>
                     <button onClick={() => handleSort('completed', 'asc')}>Status Completed Asc</button>
-                    <button onClick={() => handleSort('completed', 'desc')}>Status Completed Desc</button>
+                    <button onClick={() => handleSort('completed', 'desc')}>Status Completed Dsc</button>
                 </section>
                 <NewTodo addTodo={addTodo} />
                 <section className="todo-list-section">

@@ -1,12 +1,12 @@
 import React from 'react';
 import './Todo.css';
 
-function Todo({ id, text, completed, deleteTodo, toggleComplete }) { // Correct prop names
+function Todo({ id, text, completed, deleteTodo, toggleComplete }) { 
   return (
     <li className={`todo-item ${completed ? 'completed' : ''}`} id={id}>
       <span
-        tabIndex={0} // Make text focusable
-        onClick={() => toggleComplete(id)} // Simplified call for toggleComplete
+        tabIndex={0}
+        onClick={() => toggleComplete(id)} 
         onKeyPress={(event) => event.key === 'Enter' && toggleComplete(id)}
       >
         {text}

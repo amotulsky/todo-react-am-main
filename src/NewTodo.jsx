@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Todo.css';  // Make sure the CSS file is properly linked
+import './Todo.css';  
 
-function NewTodo({ addTodo }) { // Updated prop name to match App.jsx
+function NewTodo({ addTodo }) { 
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (e) => {
@@ -11,14 +11,14 @@ function NewTodo({ addTodo }) { // Updated prop name to match App.jsx
   const handleAddClick = (event) => {
     event.preventDefault();
     if (inputValue.trim()) {
-      addTodo(inputValue); // Call addTodo, passed from App.jsx
+      addTodo(inputValue); 
       setInputValue('');
     }
   };
 
   return (
     <section className="todo-input-section">
-      <div className="input-group">  {/* Adding the flex container */}
+      <div className="input-group">  {/*  flex container */}
         <input
           type="text"
           id="new-todo-text"
